@@ -1,0 +1,27 @@
+
+<div class="editor-area">
+    <div class="top-area">
+        <div class="title-area">
+            elemento sopra
+        </div>
+        <div class="input-area">
+            <mat-form-field appearance="fill">
+                <mat-label>Clearable input</mat-label>
+                <input matInput type="number" [(ngModel)]="colsN">
+                <button *ngIf="colsN != 8" matSuffix mat-icon-button aria-label="Clear" (click)="colsN=8">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="grid-area">
+        <mat-grid-list cols="colsN" rowHeight="100px">
+            <mat-grid-tile
+            *ngFor="let tile of tiles"
+            [style.background]="tile.color">
+            {{tile.text}}
+            <p>{{colsN}}</p>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>

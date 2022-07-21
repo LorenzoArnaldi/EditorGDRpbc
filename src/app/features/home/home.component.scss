@@ -1,0 +1,13 @@
+.home-class {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    .home-exp-panel {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+        height: 60%;
+    }
+}
