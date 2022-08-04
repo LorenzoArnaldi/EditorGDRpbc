@@ -1,27 +1,47 @@
 
 <div class="editor-area">
+    
     <div class="top-area">
         <div class="title-area">
             elemento sopra
         </div>
         <div class="input-area">
-            <mat-form-field appearance="fill">
-                <mat-label>Clearable input</mat-label>
-                <input matInput type="number" [(ngModel)]="colsN">
-                <button *ngIf="colsN != 8" matSuffix mat-icon-button aria-label="Clear" (click)="colsN=8">
-                    <mat-icon>close</mat-icon>
-                </button>
-            </mat-form-field>
+
+            <form [formGroup]="form">
+                <mat-form-field>
+                    <mat-label>numero righe</mat-label>
+                    <mat-select formControlName="formRows">
+                        <mat-option 
+                            *ngFor="let value of selectRows" 
+                            [value]="value">{{ value }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field style="padding-left:15px;">
+                    <mat-label>numero box</mat-label>
+                    <mat-select formControlName="formBoxs">
+                        <mat-option 
+                            *ngFor="let value of selectBoxs" 
+                            [value]="value">{{ value }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <button type="button" (click)="setGrid()">CLICCAMI</button>
+            </form>
         </div>
     </div>
+
+    <!-- _____________________________________ -->
+
     <div class="grid-area">
-        <mat-grid-list cols="colsN" rowHeight="100px">
-            <mat-grid-tile
-            *ngFor="let tile of tiles"
-            [style.background]="tile.color">
-            {{tile.text}}
-            <p>{{colsN}}</p>
-            </mat-grid-tile>
-        </mat-grid-list>
+        <div *ngFor="let Rn of rowN" class="row-box">
+            <div *ngFor="let Bn of boxN" class="single-box">
+                <a (click)="setElementBox(Bn)">
+                    prova
+                </a>
+            </div>
+        </div>
     </div>
+
 </div>

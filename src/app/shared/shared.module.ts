@@ -4,6 +4,7 @@ import { SectionButtonComponent } from './components/section-button/section-butt
 import { NgModule } from '@angular/core';
 import { ExpansionPanelHomeComponent } from './components/expansion-panel-home/expansion-panel-home.component';
 
+
 const sharedComponent = [
     SectionButtonComponent,
     ExpansionPanelHomeComponent
@@ -16,7 +17,7 @@ const sharedComponent = [
     ],
     imports: [
         CommonModule,
-        MaterialModule,
+        MaterialModule
     ],
     exports: [
         MaterialModule,

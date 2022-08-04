@@ -8,6 +8,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { TextFieldModule } from '@angular/cdk/text-field';
+import { MatSelectModule } from '@angular/material/select';
 
 const sharedMaterialModule = [
   MatSidenavModule,
@@ -15,7 +18,10 @@ const sharedMaterialModule = [
   MatButtonModule,
   MatExpansionModule,
   MatGridListModule,
-  MatInputModule
+  MatInputModule,
+  MatFormFieldModule,
+  TextFieldModule,
+  MatSelectModule,
 ]
 
 @NgModule({
